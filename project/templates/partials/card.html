@@ -1,0 +1,13 @@
+<div class="card mb-3">
+  <h5 class="card-header ">{{ book.title }}</h5>
+  <div class="card-body border-dark">
+    <p class="card-text text-dark">
+      {{ book.content|truncatewords_html:30 }}
+      <hr>
+      <div class="text-right"><a href="{% url 'book-details-project' book.slug %}" title="Read More">Read More</a></div>
+      <div class="text-left"><a href="{% url 'book-update-project' book.pk %}" title="Update">Update</a></div>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted">Last updated  <b>{{ book.author.username }}</b></small>
+  </div>
+</div>
